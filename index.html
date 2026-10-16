@@ -2,8 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- The mark flips with the OS appearance: favicon-light.svg is the black
+         glyph for light tab bars, favicon-dark.svg the white one for dark tab
+         bars. The light icon is listed first and unqualified so it also acts as
+         the fallback in browsers that ignore media on link[rel=icon]. -->
+    <link rel="icon" type="image/svg+xml" href="/favicon-light.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon-dark.svg" media="(prefers-color-scheme: dark)" />
     <title>Pro Bento</title>
   </head>
   <body>
