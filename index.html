@@ -1,18 +1,50 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- The mark flips with the OS appearance: favicon-light.svg is the black
-         glyph for light tab bars, favicon-dark.svg the white one for dark tab
-         bars. The light icon is listed first and unqualified so it also acts as
-         the fallback in browsers that ignore media on link[rel=icon]. -->
-    <link rel="icon" type="image/svg+xml" href="/favicon-light.svg" />
-    <link rel="icon" type="image/svg+xml" href="/favicon-dark.svg" media="(prefers-color-scheme: dark)" />
-    <title>Pro Bento</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What You Unlock</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon-light.svg" />
+  <link rel="icon" type="image/svg+xml" href="/favicon-dark.svg" media="(prefers-color-scheme: dark)" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Figtree:wght@400;500;600&display=swap">
+  <style>body { margin: 0; padding: 48px 32px; background: #fafafa; } .wrap { max-width: 1168px; margin: 0 auto; }</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- ================= WHAT YOU UNLOCK ================= -->
+    <section class="panel" aria-labelledby="unlock-title">
+      <div class="panel-head">
+        <span class="eyebrow">What You Unlock</span>
+        <h2 id="unlock-title" class="h2 h2-wide">What paid plans open up.</h2>
+      </div>
+      <div class="unlock-grid divider-t">
+        <article class="unlock-tile" tabindex="0">
+          <h3>Trader profiles</h3>
+          <p>Any wallet in a coin's holders or ICO contributors, opened up. Analyst gives the summary; Builder gives every position and trade.</p>
+          <div class="unlock-stage" data-iso="traders"></div>
+        </article>
+        <article class="unlock-tile" tabindex="0">
+          <h3>NAV/AS history</h3>
+          <p>Free shows today. Analyst adds three months; Builder goes back to each coin's launch.</p>
+          <div class="unlock-stage" data-iso="history"></div>
+        </article>
+        <article class="unlock-tile" tabindex="0">
+          <h3>01R MCP in Claude</h3>
+          <p>Ask about any coin in plain language. Claude answers from the same data as the API, on every plan.</p>
+          <div class="unlock-stage" data-iso="mcp"></div>
+        </article>
+        <article class="unlock-tile" tabindex="0">
+          <h3>Your own alerts</h3>
+          <p>Watch the coins you hold: their discount, their supply and what their largest holders do. Wire it into the alerts you already use.</p>
+          <div class="unlock-stage" data-iso="alerts"></div>
+        </article>
+      </div>
+    </section>
+
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
 </html>

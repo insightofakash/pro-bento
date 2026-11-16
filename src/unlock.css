@@ -1,0 +1,103 @@
+/* "What paid plans open up." section — standalone styles.
+   Extracted 1:1 from styles.css. Pair with unlock.js (the four isometric animations). */
+
+@font-face {
+  font-family: "Open Sauce One";
+  src: local("Open Sauce One"), local("OpenSauceOne-Regular"), url("fonts/OpenSauceOne-Regular.woff2") format("woff2");
+  font-weight: 400; font-display: swap;
+}
+@font-face {
+  font-family: "Open Sauce One";
+  src: local("Open Sauce One Medium"), local("OpenSauceOne-Medium"), url("fonts/OpenSauceOne-Medium.woff2") format("woff2");
+  font-weight: 500; font-display: swap;
+}
+@font-face {
+  font-family: "Open Sauce One";
+  src: local("Open Sauce One SemiBold"), local("OpenSauceOne-SemiBold"), url("fonts/OpenSauceOne-SemiBold.woff2") format("woff2");
+  font-weight: 600; font-display: swap;
+}
+
+:root {
+  --ink: #0a0a0a;
+  --muted: #737373;
+  --bg: #fafafa;
+  --card: #fff;
+  --line: #ededed;
+  --line-soft: #f5f5f5;
+  --tan: #d4b596;
+  --radius: 10px;
+
+  --sans: "Open Sauce One", "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --serif: "EB Garamond", Georgia, serif;
+}
+
+/* ---------- Panel shell ---------- */
+.panel {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  overflow: clip;
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+.panel * { box-sizing: border-box; }
+.panel h2, .panel h3, .panel p { margin: 0; }
+.panel-head { display: flex; flex-direction: column; gap: 24px; padding: 32px; }
+.divider-t { border-top: 1px solid var(--line-soft); }
+
+/* ---------- Eyebrow tag ---------- */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 6px;
+  width: fit-content;
+  padding: 3px 8px;
+  border: 1px solid var(--tan);
+  border-radius: 8px;
+  font-size: 12px; font-weight: 500; line-height: 1.5;
+  background: linear-gradient(180deg, #fffdfa 0%, #faf6f1 100%);
+  box-shadow: inset 0 1px 0 #fff, 0 1px 1px rgba(143,109,73,.08);
+}
+
+/* ---------- Heading ---------- */
+.h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 1.2;
+  text-wrap: balance;
+  max-width: 18ch;
+}
+.h2-wide { max-width: 26ch; }
+
+/* ---------- What you unlock (isometric illustrations, see unlock.js) ---------- */
+.unlock-grid { display: grid; grid-template-columns: 1fr 1fr; }
+.unlock-tile { padding: 32px; display: flex; flex-direction: column; outline: none; }
+.unlock-tile:nth-child(even) { border-left: 1px solid var(--line-soft); }
+.unlock-tile:nth-child(n + 3) { border-top: 1px solid var(--line-soft); }
+.unlock-tile h3 { font-size: 18px; font-weight: 600; line-height: 1.3; }
+.unlock-tile p { margin-top: 6px; font-size: 14px; line-height: 1.5; color: var(--muted); max-width: 52ch; }
+.unlock-tile .unlock-stage { margin-top: 24px; height: 360px; }
+.iso-stage {
+  position: relative; width: 100%; height: 100%; min-height: 220px;
+  border-radius: 16px; overflow: hidden;
+  background: radial-gradient(46% 30% at 50% 66%, rgba(10,10,10,0.06), rgba(10,10,10,0) 72%), #F4F4F3;
+}
+.iso-dots { position: absolute; inset: 0; }
+.iso-inner { position: absolute; inset: 16px; }
+.iso-svg { display: block; overflow: visible; font-family: var(--sans); font-variant-numeric: tabular-nums; }
+
+/* ---------- Narrow screens (standalone site only; desktop above 900px is unchanged) ---------- */
+@media (max-width: 900px) {
+  .unlock-grid { grid-template-columns: 1fr; }
+  .unlock-tile:nth-child(even) { border-left: 0; }
+  .unlock-tile:nth-child(n + 2) { border-top: 1px solid var(--line-soft); }
+  .h2 { font-size: 36px; }
+}
+@media (max-width: 560px) {
+  body { padding: 24px 16px !important; }
+  .panel-head, .unlock-tile { padding: 24px; }
+  .unlock-tile .unlock-stage { height: 300px; }
+  .h2 { font-size: 32px; }
+}
