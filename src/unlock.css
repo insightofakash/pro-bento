@@ -101,3 +101,17 @@
   .unlock-tile .unlock-stage { height: 300px; }
   .h2 { font-size: 32px; }
 }
+
+/* ---------- Copy JSX buttons ---------- */
+.unlock-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.copy-jsx {
+  flex-shrink: 0;
+  height: 30px; padding: 0 13px;
+  border: 1px solid #E4E4E1; border-radius: 999px;
+  background: #fff; color: #6E6E6C;
+  font: inherit; font-size: 12.5px; font-weight: 500; line-height: 1;
+  cursor: pointer;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+.copy-jsx:hover { background: #F4F4F2; color: #161616; border-color: #C8C8C5; }
+.copy-jsx:focus-visible { outline: none; box-shadow: 0 0 0 2px #fff, 0 0 0 4px #161616; }
